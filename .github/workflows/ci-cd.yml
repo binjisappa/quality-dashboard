@@ -10,8 +10,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Run npm install, test and build
-        run: |
-          npm ci
+        run: npm ci
           npm test
           npm run build
       - name: Upload build artifact
