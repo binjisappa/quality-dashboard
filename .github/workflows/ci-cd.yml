@@ -44,7 +44,7 @@ jobs:
           projectId: quality-dashboard-produc-d70d9
 
   deploy_to_staging:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/staging'
     needs: test_and_build
     runs-on: ubuntu-latest
     steps:
@@ -58,7 +58,7 @@ jobs:
       - name: Deploy to firebase hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          repoToken: "${{ secrets.GITHUB_TOKEN git push}}"
           firebaseServiceAccount: >-
             ${{ secrets.FIREBASE_SERVICE_ACCOUNT_QUALITY_DASHBOARD_STAGING
             }}
